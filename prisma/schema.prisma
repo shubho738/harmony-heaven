@@ -1,0 +1,73 @@
+
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+
+model HomeHeroBanner {
+  id              String    @id @default(auto()) @map("_id") @db.ObjectId
+  description     String
+  desktopImageUrl String
+  mobileImageUrl  String
+  ctaHref         String
+}
+
+
+model Category {
+
+   id          String   @id @default(auto()) @map("_id") @db.ObjectId
+   name        String   @unique
+   image       String
+   products    Product[]
+}
+
+
+model Product {
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  description String
+  price       Float
+  discountedPrice   Float?
+  images      String[]
+  categoryId  String     @db.ObjectId
+  category    Category   @relation(fields: [categoryId], references: [id])
+  createdAt   DateTime   @default(now()) 
+  updatedAt   DateTime   @updatedAt 
+
+  isTrending  Boolean?
+  isPopular   Boolean?
+}
+
+model Cart {
+  id         String     @id @default(auto()) @map("_id") @db.ObjectId
+  cartItems  CartItem[]
+  users      User[]
+}
+
+model CartItem {
+  id         String     @id @default(auto()) @map("_id") @db.ObjectId
+  productId    String   @db.ObjectId
+  productName  String
+  price        Float
+  quantity   Int
+  cart       Cart       @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  cartId     String     @db.ObjectId
+}
+
+
+model User {
+  id             String     @id @default(auto()) @map("_id") @db.ObjectId
+  name           String
+  email          String     @unique
+  hashedPassword String
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
+  cartId         String?    
+  cart           Cart?      @relation(fields: [cartId], references: [id])
+}
