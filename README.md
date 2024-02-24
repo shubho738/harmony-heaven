@@ -14,6 +14,11 @@ This project is an ecommerce store for musical instruments. It features the stan
 ### Responsive Design
 - **Mobile-First Approach:** Designed to be responsive from the ground up, ensuring a seamless experience across devices of all sizes.
 
+### Performance Optimization
+
+- **Fast and Responsive:** Leverages React Server Components for server-side data fetching, ensuring fast and responsive performance. The React code is optimized for performance.
+
+
 ### React Component-Based Architecture
 - **Reusable Components:** Components are designed to be modular and reusable, promoting a consistent look and feel throughout the application. Effort has been dedicated to make the UI as reusable as possible.
 
