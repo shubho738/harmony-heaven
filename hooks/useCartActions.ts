@@ -24,13 +24,13 @@ const useCartActions = (): CartActions => {
 
       await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/cart/addItem`, productToAdd)
 
-      toast.success(successMsg, {id: "addToCart success."})
+      toast.success(successMsg, {id: "addToCart success"})
       mutateCart()
     }
 
     catch(err) {
     
-      toast.error("Sorry, There was an error.", {id: "addToCart failure."})
+      toast.error("Sorry, There was an error.", {id: "addToCart failure"})
     }
   }
 
@@ -39,12 +39,12 @@ const useCartActions = (): CartActions => {
 
     try {
       await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/cart/${itemId}/remove`)
-      toast.success("Item removed from Cart.")
+      toast.success("Item removed from Cart.", {id: "removeFromCart success"})
       mutateCart()
     }
 
     catch(err) {
-      toast.error("Sorry, There was an error.")
+      toast.error("Sorry, There was an error.", {id: "removeFromCart failure"})
     }
   }
 
@@ -53,12 +53,12 @@ const useCartActions = (): CartActions => {
 
     try {
       await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/cart/clear`)
-      toast.success("Cart was cleared.", {id: "cartCleared"})
+      toast.success("Cart was cleared.", {id: "clearCart success"})
       mutateCart()
     }
 
     catch(err) {
-      toast.error("Sorry, There was an error clearing the cart.")
+      toast.error("Sorry, There was an error clearing the cart.", {id: "clearCart failure"})
     }
   } 
 
