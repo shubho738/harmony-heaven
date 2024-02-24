@@ -58,7 +58,7 @@ const useCartActions = (): CartActions => {
     }
 
     catch(err) {
-      toast.error("Sorry, There was an error.")
+      toast.error("Sorry, There was an error clearing the cart.")
     }
   } 
 
