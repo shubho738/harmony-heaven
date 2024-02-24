@@ -1,9 +1,14 @@
 
 export const siteConfig = {
+
+  name: "HarmonyHeaven",
+
   title: "HarmonyHeaven",
 
   description:
-    "Discover your harmony at harmony-heaven.com - Explore a symphony of musical instruments, from guitars to keyboards. Find your rhythm with our curated collection and create beautiful melodies. Shop now for top-quality instruments and accessories!",
+    "Discover your harmony at https://harmony-heaven.vercel.app - Explore a symphony of musical instruments, from guitars to keyboards. Find your rhythm with our curated collection and create beautiful melodies. Shop now for top-quality instruments and accessories!",
+
+  url: "https://harmony-heaven.vercel.app",
   
   footerNav: [
     {

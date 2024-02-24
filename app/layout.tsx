@@ -18,10 +18,19 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "Shubhankar Chakraborty",
-      url: "https://github.com/someuser",
+      url: "https://github.com/shubho738",
     },
   ],
   creator: "Shubhankar Chakraborty",
+
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteConfig.url,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+  },
 
   icons: {
     icon: "/icon.ico",
