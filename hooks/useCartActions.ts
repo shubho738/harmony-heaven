@@ -24,13 +24,13 @@ const useCartActions = (): CartActions => {
 
       await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/cart/addItem`, productToAdd)
 
-      toast.success(successMsg)
+      toast.success(successMsg, {id: "addToCart success."})
       mutateCart()
     }
 
     catch(err) {
     
-      toast.error("Sorry, There was an error.")
+      toast.error("Sorry, There was an error.", {id: "addToCart failure."})
     }
   }
 
