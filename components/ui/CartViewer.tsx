@@ -52,7 +52,7 @@ const CartItem = ({item, onRemove}: CartItemProps) => {
         target="_blank"
       >
         <div
-          className="w-full max-w-xs h-full"
+          className="w-full max-w-xs h-full xs:bg-neutral-light"
         >
           <ImageView
             src={productImage || ""}
