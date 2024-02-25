@@ -33,7 +33,7 @@ const CartItem = ({productId, quantity, onNavigate, onRemove}: CartItemProps) =>
 
   const {data: product, isLoading: isLoadingProduct}: {data: Product | undefined; isLoading: boolean;} = useProduct(productId)
 
-  const {data: productImage}: {data: string | undefined} = useProductImage(productId)
+  const {data: productImage, isLoading: isLoadingProductImage}: {data: string | undefined, isLoading: boolean} = useProductImage(productId)
 
   const onRemoveItem = async () => {
 
@@ -56,6 +56,7 @@ const CartItem = ({productId, quantity, onNavigate, onRemove}: CartItemProps) =>
         <ImageView
           src={productImage ?? ""}
           alt={`image for ${product?.name}`}
+          isLoading={isLoadingProductImage}
           containerCustomStyles="aspect-auto w-full h-full"
         />
       </div>
