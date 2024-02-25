@@ -44,11 +44,12 @@ const ImageGallery = ({images, productName, customStyles}: ImageGalleryProps) =>
           <div
             key={`${image} index`}
             onClick={() => setFeaturedImage(image)}
-            className={`w-full cursor-pointer hover:scale-105 transition ${image === featuredImage ? "border-2 border-accent-secondary" : ""}`}
+            className={`w-full bg-neutral-light cursor-pointer hover:scale-105 transition ${image === featuredImage ? "border-2 border-accent-secondary" : ""}`}
           >
             <ImageView
               src={image}
               alt={`image for ${productName}`}
+              // imageCustomStyles="object-cover"
             />
           </div>
           ))}
