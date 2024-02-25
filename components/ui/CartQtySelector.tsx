@@ -95,7 +95,7 @@ const CartQtySelector = ({product, autoAddToCart}: CartQtySelectorProps) => {
           <Button
             onClick={() =>onQuantityUpdate("remove")}
             icon={Minus}
-            disabled={isProductEmpty || isRemoving}
+            disabled={isProductEmpty || isRemoving || isAdding}
             isLoading={isRemoving}
             customStyles="py-px px-1 bg-btn-secondary"
           />
@@ -109,7 +109,7 @@ const CartQtySelector = ({product, autoAddToCart}: CartQtySelectorProps) => {
           <Button
             onClick={() =>onQuantityUpdate("add")}
             icon={Plus}
-            disabled={isProductEmpty || isAdding}
+            disabled={isProductEmpty || isAdding || isRemoving}
             isLoading={isAdding}
             customStyles="py-px px-1 bg-btn-secondary"
           />

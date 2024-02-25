@@ -38,7 +38,7 @@ export const POST = async (req: Request) => {
   }
 
   catch (err) {
-    
+    console.log(err, 'checkout error')
     return NextResponse.json({error: "Failed to create checkout session"}, {status: 500})
   }
 }
