@@ -56,9 +56,3 @@ The following environment variables need to be set for the application to work p
 - `NEXTAUTH_JWT_SECRET`: Secure random string for JWT.
 
 Create a `.env.local` file at the root of the project and set these variables accordingly.
-
-
-## Usage
-
-- Navigate to `localhost:3000` in your browser to access the application.
-- Explore the various features of the social media site for travelers.
